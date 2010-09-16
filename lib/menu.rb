@@ -9,8 +9,9 @@ module Menu
   end
 
   def prompt(lines)
+    ljust_size = lines.size.to_s.size + 1
     lines.each_with_index {|obj,i|
-      puts "#{i+1}. #{obj}"
+      puts "#{i+1}.".ljust(ljust_size) + " " +obj
     }
     print "\nSpecify individual choices (4,7), range of choices (1-3)" +
       " or all choices (*).\nChoose: "

@@ -60,6 +60,16 @@ describe "Menu.run" do
     behaves_like "parses choices"
   end
 
+  it "displays choices on same column" do
+    mock($stdin).tty? { true }
+    mock(Menu).print anything
+    ['1.  1', '2.  2', '3.  3', '4.  4', '5.  5', '6.  6', '7.  7', '8.  8',
+      '9.  9', '10. 10'].each {|e| mock(Menu).puts e }
+    mock($stdin).gets {'' }
+    mock(Menu).puts []
+    menu (1..10).to_a.map {|e| e.to_s }
+  end
+
   describe "with stdin" do
     before do
       mock($stdin).tty? { false }
