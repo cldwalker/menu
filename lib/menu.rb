@@ -12,7 +12,8 @@ module Menu
     lines.each_with_index {|obj,i|
       puts "#{i+1}. #{obj}"
     }
-    print "Choose: "
+    print "\nSpecify individual choices (4,7), range of choices (1-3)" +
+      " or all choices (*).\nChoose: "
   end
 
   def ask
@@ -24,13 +25,12 @@ module Menu
     return array if input.strip == '*'
     result = []
     input.split(/\s*,\s*/).each do |e|
-      if e.include?('-')
-        min,max = e.split('-')
+      if e[/(\d+)-(\d+)/]
+        min, max = $1, $2
         slice_min = min.to_i - 1
         result.push(*array.slice(slice_min, max.to_i - min.to_i + 1))
-      elsif e =~ /\s*(\d+)\s*/
+      elsif e[/^(\d+)$/]
         index = $1.to_i - 1
-        next if index < 0
         result.push(array[index]) if array[index]
       else
         abort("`#{e}' is an invalid choice.")

@@ -6,6 +6,12 @@ describe "Menu.run" do
   end
 
   shared "parses choices" do
+    it 'parses empty choice' do
+      mock($stdin).gets { '' }
+      mock(Menu).puts []
+      menu @args
+    end
+
     it "parses single choice" do
       mock($stdin).gets { '1' }
       mock(Menu).puts ['uno']
@@ -33,6 +39,12 @@ describe "Menu.run" do
     it "aborts with invalid choice" do
       mock($stdin).gets { 'a' }
       mock(Menu).abort(/a' is an invalid choice/) { raise RuntimeError }
+      menu(@args) rescue nil
+    end
+
+    it "aborts a negative number choice" do
+      mock($stdin).gets { '-4' }
+      mock(Menu).abort(/-4' is an invalid choice/) { raise RuntimeError }
       menu(@args) rescue nil
     end
   end
