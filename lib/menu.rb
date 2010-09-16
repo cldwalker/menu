@@ -1,3 +1,5 @@
+require 'menu/version'
+
 module Menu
   extend self
 

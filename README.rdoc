@@ -5,6 +5,7 @@ A simple *nix command which takes arguments or stdin and provides a menu to prin
 == Todo
 
 * handle multiple pipes
+* add help and other basic options
 * manpage
 * noninteractive mode
 * action menu - hirb style

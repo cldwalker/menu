@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.version     = Menu::VERSION
   s.authors     = ["Gabriel Horner"]
   s.email       = "gabriel.horner@gmail.com"
-  s.homepage    = "http://tagaholic.me/menu/"
-  s.summary = "SUMMARY"
+  s.homepage    = "http://github.com/cldwalker/menu"
+  s.summary = "Less typing with more choices"
   s.description =  "DESCRIPTION"
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = 'tagaholic'
