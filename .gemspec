@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Gabriel Horner"]
   s.email       = "gabriel.horner@gmail.com"
   s.homepage    = "http://github.com/cldwalker/menu"
-  s.summary = "Less typing with more choices"
+  s.summary = "More choices with less typing"
   s.description =  "A simple *nix command which takes arguments or stdin and provides a menu to print chosen lines."
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project = 'tagaholic'
