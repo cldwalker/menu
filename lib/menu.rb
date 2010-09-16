@@ -22,7 +22,7 @@ module Menu
     $stdin.gets.chomp
   end
 
-  def parse_answer(array, input, options={})
+  def parse_answer(array, input)
     return array if input.strip == '*'
     result = []
     input.split(/\s*,\s*/).each do |e|
