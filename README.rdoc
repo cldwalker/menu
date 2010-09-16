@@ -1,0 +1,11 @@
+== Description
+
+A simple *nix command which takes arguments or stdin and provides a menu to print chosen lines.
+
+== Todo
+
+* handle multiple pipes
+* manpage
+* noninteractive mode
+* action menu - hirb style
+* negation choosing
